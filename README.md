@@ -1,2 +1,2 @@
 # viem_record
-viem study record
+doc: https://viem.sh/
