@@ -58,7 +58,14 @@ const publicClient = createPublicClient({
 
 支持两种类型：
 - JSON-RPC Accounts (e.g. Browser Extension Wallets, WalletConnect, etc.)
+    - 私钥永不泄露：签名全部在钱包内部完成。
+    - 需要用户授权：首次调用 requestAddresses（或 enable）会弹出授权窗口。
+    - 适合 DApp 前端：用户自行管理资产，开发者只负责业务逻辑。
 - Local Accounts (e.g. private key/mnemonic wallets)
+    - 私钥自行保管：泄露即失去资产。
+    - 适合后端脚本、自动化：无需用户交互。
+    - 可以配合任何 RPC：只要节点支持 eth_sendRawTransaction
+
 
 | 功能 | 说明 |
 |------|------|
